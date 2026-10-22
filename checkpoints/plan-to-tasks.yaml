@@ -1,0 +1,159 @@
+# Plan-to-Tasks Traceability Checkpoint
+metadata:
+  generated: "2026-10-22"
+  source_plan: "plan.md"
+  target_tasks: "plan.md (inline task breakdown)"
+summary:
+  total_plan_items: 23
+  covered_plan_items: 23
+  missing_plan_items: 0
+  coverage_percentage: 100.0
+  total_tasks_generated: 35
+  orphan_tasks: 0
+phases:
+  - phase_id: "Phase-1"
+    phase_name: "Foundation"
+    items:
+      - item_id: "1.1"
+        tasks: ["T001", "T002"]
+  - phase_id: "Phase-2"
+    phase_name: "Ingestion"
+    items:
+      - item_id: "2.1"
+        tasks: ["T003", "T004", "T005"]
+      - item_id: "2.2"
+        tasks: ["T006", "T007"]
+  - phase_id: "Phase-3"
+    phase_name: "Retrieval and answers"
+    items:
+      - item_id: "3.1"
+        tasks: ["T008", "T009"]
+      - item_id: "3.2"
+        tasks: ["T010", "T011", "T012"]
+      - item_id: "3.3"
+        tasks: ["T013"]
+  - phase_id: "Phase-4"
+    phase_name: "API"
+    items:
+      - item_id: "4.1"
+        tasks: ["T014", "T015"]
+      - item_id: "4.2"
+        tasks: ["T016"]
+  - phase_id: "Phase-5"
+    phase_name: "Web interface"
+    items:
+      - item_id: "5.1"
+        tasks: ["T017", "T018"]
+      - item_id: "5.2"
+        tasks: ["T019"]
+      - item_id: "5.3"
+        tasks: ["T020"]
+  - phase_id: "Phase-6"
+    phase_name: "Hardening"
+    items:
+      - item_id: "6.1"
+        tasks: ["T021", "T022"]
+      - item_id: "6.2"
+        tasks: ["T023"]
+      - item_id: "6.3"
+        tasks: ["T024"]
+  - phase_id: "Phase-7"
+    phase_name: "Jarvis assistant runtime"
+    items:
+      - item_id: "7.1"
+        tasks: ["T025", "T026"]
+      - item_id: "7.2"
+        tasks: ["T027"]
+      - item_id: "7.3"
+        tasks: ["T028"]
+      - item_id: "7.4"
+        tasks: ["T029"]
+  - phase_id: "Phase-8"
+    phase_name: "Voice, tools, and automation"
+    items:
+      - item_id: "8.1"
+        tasks: ["T030", "T031"]
+      - item_id: "8.2"
+        tasks: ["T032"]
+      - item_id: "8.3"
+        tasks: ["T033"]
+      - item_id: "8.4"
+        tasks: ["T034"]
+      - item_id: "8.5"
+        tasks: ["T035"]
+missing_plan_items: []
+orphan_tasks: []
+upstream_trace:
+  - plan_item: "1.1"
+    source_requirements: ["REQ-001", "REQ-002"]
+    tasks: ["T001", "T002"]
+  - plan_item: "2.1"
+    source_requirements: ["REQ-001", "REQ-003"]
+    tasks: ["T003", "T004", "T005"]
+  - plan_item: "2.2"
+    source_requirements: ["REQ-001", "REQ-003"]
+    tasks: ["T006", "T007"]
+  - plan_item: "3.1"
+    source_requirements: ["REQ-002", "REQ-004"]
+    tasks: ["T008", "T009"]
+  - plan_item: "3.2"
+    source_requirements: ["REQ-002", "REQ-004"]
+    tasks: ["T010", "T011", "T012"]
+  - plan_item: "3.3"
+    source_requirements: ["REQ-004"]
+    tasks: ["T013"]
+  - plan_item: "4.1"
+    source_requirements: ["REQ-002", "REQ-003", "REQ-004"]
+    tasks: ["T014", "T015"]
+  - plan_item: "4.2"
+    source_requirements: ["REQ-002"]
+    tasks: ["T016"]
+  - plan_item: "5.1"
+    source_requirements: ["REQ-002", "REQ-003"]
+    tasks: ["T017", "T018"]
+  - plan_item: "5.2"
+    source_requirements: ["REQ-004"]
+    tasks: ["T019"]
+  - plan_item: "5.3"
+    source_requirements: ["REQ-002"]
+    tasks: ["T020"]
+  - plan_item: "6.1"
+    source_requirements: ["REQ-001", "REQ-005"]
+    tasks: ["T021", "T022"]
+  - plan_item: "6.2"
+    source_requirements: ["REQ-005"]
+    tasks: ["T023"]
+  - plan_item: "6.3"
+    source_requirements: ["REQ-005"]
+    tasks: ["T024"]
+  - plan_item: "7.1"
+    source_requirements: ["REQ-006"]
+    tasks: ["T025", "T026"]
+  - plan_item: "7.2"
+    source_requirements: ["REQ-006", "REQ-007"]
+    tasks: ["T027"]
+  - plan_item: "7.3"
+    source_requirements: ["REQ-007", "REQ-008"]
+    tasks: ["T028"]
+  - plan_item: "7.4"
+    source_requirements: ["REQ-006"]
+    tasks: ["T029"]
+  - plan_item: "8.1"
+    source_requirements: ["REQ-006"]
+    tasks: ["T030", "T031"]
+  - plan_item: "8.2"
+    source_requirements: ["REQ-007"]
+    tasks: ["T032"]
+  - plan_item: "8.3"
+    source_requirements: ["REQ-007", "REQ-008"]
+    tasks: ["T033"]
+  - plan_item: "8.4"
+    source_requirements: ["REQ-007", "REQ-008"]
+    tasks: ["T034"]
+  - plan_item: "8.5"
+    source_requirements: ["REQ-006", "REQ-007", "REQ-008"]
+    tasks: ["T035"]
+validation:
+  passed: true
+  errors: []
+  warnings: []

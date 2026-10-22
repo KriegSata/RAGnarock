@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RAGnarock</title>
+  <style>
+    :root { color-scheme: dark; font: 16px system-ui, sans-serif; } body { max-width: 900px; margin: 0 auto; padding: 2rem; background: #111827; color: #e5e7eb; } h1 { color: #a7f3d0; } textarea { width: 100%; min-height: 100px; padding: 1rem; box-sizing: border-box; background: #1f2937; color: inherit; border: 1px solid #4b5563; border-radius: 8px; } button { margin-top: .75rem; padding: .65rem 1rem; border: 0; border-radius: 6px; background: #34d399; color: #052e16; font-weight: 700; cursor: pointer; } #status { color: #9ca3af; } .answer { white-space: pre-wrap; background: #1f2937; padding: 1rem; border-radius: 8px; margin-top: 1rem; } li { margin: .5rem 0; }
+  </style>
+</head>
+<body>
+  <h1>RAGnarock</h1>
+  <p>Ask your local knowledge base. Add files to <code>data/knowledge</code>, then reindex.</p>
+  <button id="index">Reindex knowledge</button> <span id="status"></span>
+  <form id="ask">
+    <p><textarea id="question" required placeholder="What do you want to understand?"></textarea></p>
+    <button>Ask</button>
+  </form>
+  <section id="result"></section>
+  <script>
+    const status = document.querySelector("#status"), result = document.querySelector("#result");
+    document.querySelector("#index").onclick = async () => { status.textContent = "Indexing..."; const r = await fetch("/api/index", {method:"POST"}); const d = await r.json(); status.textContent = r.ok ? `${d.documents} document(s) indexed.` : d.error; };
+    document.querySelector("#ask").onsubmit = async (event) => { event.preventDefault(); result.textContent = "Thinking..."; const r = await fetch("/api/ask", {method:"POST", headers:{"content-type":"application/json"}, body:JSON.stringify({question:document.querySelector("#question").value})}); const d = await r.json(); result.innerHTML = `<div class="answer"></div><h3>Sources</h3><ul>${(d.sources || []).map(s => `<li>${s.id}</li>`).join("")}</ul>`; result.querySelector(".answer").textContent = d.answer || d.error; };
+  </script>
+</body>
+</html>
